@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration System - Login</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+       
+        body {
+            padding-top: 60px;
+            background-color: #e3f2fd;
+        }
+        .container1{
+            width: 100%;
+            background: #fff;
+            border-radius: 5px;
+            height: 320px;
+            max-width: 500px;
+            padding: 0 30px;
+            margin: 170px auto;
+        }
+        footer {
+             background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Course Registration System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course_info.html">Course Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="course_reg.html">Course Registration</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container1 mt-5">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="rememberEmail">
+                <label class="form-check-label" for="rememberEmail">Remember Email Address</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    
+    var loginForm = document.getElementById("loginForm");
+
+ 
+    loginForm.addEventListener("submit", function(event) {
+       
+        event.preventDefault();
+
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email === "admin@gmail.com" && password === "admin") {
+            
+            window.location.href = "course_info.html";
+        } else {
+        
+            alert("Invalid email or password. Please try again.");
+        }
+    });
+});
+
+    </script>
+
+
+
+
+
+    <footer>
+    <p>&copy; 2024 RS Self Education. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
